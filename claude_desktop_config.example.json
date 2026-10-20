@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "readonly-docs": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\higuc\\work\\readonly-mcp\\readonly_mcp_server.py",
+        "--root",
+        "C:\\Users\\higuc\\work\\readonly-mcp\\docs"
+      ]
+    }
+  }
+}
