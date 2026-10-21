@@ -26,7 +26,15 @@ python test_client.py
 
 9項目（初期化、道具の一覧、一覧・検索・指定行の読み取り、フォルダ外の拒否、書き込みの道具がないこと、ping、記録が残ること）を確かめます。
 
-公式のMCP Python SDK（2.3.0）のクライアントから接続し、初期化・道具の一覧・読み取りができることも確認しています（Linux上、2026年10月）。
+確認した環境（2026年10月）:
+
+- Linux（Python 3.12）: 9/9。あわせて、公式のMCP Python SDK（2.3.0）のクライアントから接続し、初期化・道具の一覧・読み取りができることを確認
+- Windows（Python 3.14）: 9/9
+
+Windowsで `python` と打つと、Pythonではなく Microsoft Store の案内が開いて何も起きない場合があります。Windowsに最初から入っている仮の python.exe（アプリ実行エイリアス）が先に呼ばれるためです。そのときは、次のどちらかで動きます。
+
+- Windowsの「設定」→「アプリ」→「アプリの詳細設定」→「アプリ実行エイリアス」で、「アプリ インストーラー python.exe」と「python3.exe」をオフにする
+- `python` の代わりに、インストールしたPythonの場所をそのまま書いて実行する（例: `C:\Users\<ユーザー名>\AppData\Local\Python\bin\python.exe test_client.py`）
 
 ## Claude Desktop（Windows）で使う
 
@@ -34,6 +42,8 @@ python test_client.py
 2. 読ませたい文書を `docs` フォルダに入れます。公開して問題のない文書だけにしてください。
 3. `%APPDATA%\Claude\claude_desktop_config.json` に、`claude_desktop_config.example.json` の内容を書き足し、パスを自分の置き場所に合わせます。
 4. Claude Desktop を再起動します。
+
+設定例は `"command": "python"` で起動します。上の「動作確認」で `python` がそのまま動かなかった場合は、Claude Desktop からも起動しない可能性が高いです。アプリ実行エイリアスをオフにするか、`"command"` にPythonの場所をそのまま書いてください（JSONの中では `\` を `\\` と2つ重ねて書きます）。
 
 ## 記録の例
 
